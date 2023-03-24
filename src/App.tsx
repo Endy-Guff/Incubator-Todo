@@ -31,6 +31,10 @@ function App() {
         }
         
         let filteredTasks = tasks1
+
+    const changeIsDone = (newId: string, newIsDone: boolean) =>{
+        setTasks(tasks1.map(el=>el.id === newId ? {...el, isDone: newIsDone} : el))
+    }
         
     // let [filterValue, setFilterValue] = useState('All')
     // const filterTask = (btn: string) => {
@@ -56,6 +60,7 @@ function App() {
                 tasks={tasks1}
                 removeTask={removeTask}
                 addTask={addTask}
+                changeIsDone={changeIsDone}
                 // filterTask={filterTask}
             />
         </div>
